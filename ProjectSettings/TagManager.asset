@@ -9,6 +9,7 @@ TagManager:
   - Barrier
   - BrokenBarrier
   - Barrier2
+  - WinB
   layers:
   - Default
   - TransparentFX
