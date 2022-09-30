@@ -11,4 +11,19 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Start Screen.unity
     guid: 629bfce73f08b894d92a12fb5de026d5
+  - enabled: 1
+    path: Assets/Scenes/BlueWin.unity
+    guid: 30fea5b978d0a72498c8cc2f8a6333c7
+  - enabled: 1
+    path: Assets/Scenes/RedWin.unity
+    guid: c5591daed080796479783f79fa469ffb
+  - enabled: 1
+    path: Assets/Scenes/YellowWin.unity
+    guid: 1b06545ebc2b3024ebbaaf391a495231
+  - enabled: 1
+    path: Assets/Scenes/Credits.unity
+    guid: 35d6fd4b10ca8bd4a9765b1730729fa8
+  - enabled: 1
+    path: Assets/Scenes/Missing.unity
+    guid: f61744a5b157f7d42bd58562ca36f6e0
   m_configObjects: {}

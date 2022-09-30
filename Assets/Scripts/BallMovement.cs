@@ -6,7 +6,8 @@ using UnityEngine;
 public class BallMovement : MonoBehaviour
 {
     public float MoveSpeed = 4f;
-    private float MoveSpeedIncrease = 1.05f;
+    private float MoveSpeedIncrease = 1.1f;
+    private float SlightMoveSpeedIncrease = 1.01f;
     Vector2 BallDirection = new Vector2(1, 1);
     private float DefaultMoveSpeed = 7;
     // Start is called before the first frame update
@@ -30,6 +31,7 @@ public class BallMovement : MonoBehaviour
         if(collision.gameObject.CompareTag("Wall"))
         {
             BallDirection = Vector3.Reflect(BallDirection, collision.contacts[0].normal);
+            MoveSpeed = MoveSpeed * SlightMoveSpeedIncrease;
         }
         if (collision.gameObject.CompareTag("Paddle"))
         {
@@ -52,6 +54,7 @@ public class BallMovement : MonoBehaviour
         if (collision.gameObject.CompareTag("BrokenBarrier"))
         {
             ResetBall();
+            GameObject.Find("Canvas").GetComponent<Scores>().AddP3Score();
         }
     }
     private void ResetBall()
