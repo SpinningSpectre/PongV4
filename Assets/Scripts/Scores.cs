@@ -45,4 +45,10 @@ public class Scores : MonoBehaviour
         p1Text.text = Player1Score.ToString();
         p2Text.text = Player2Score.ToString();
     }
+    public void UpdateStats()
+    {
+        Stats stat = FindObjectOfType<Stats>();
+        Player1win = stat.winPoints;
+        Player2win = stat.winPoints;
+    }
 }

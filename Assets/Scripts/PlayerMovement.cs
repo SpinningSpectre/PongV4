@@ -3,7 +3,7 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     public int playerNumber = 1;
-    public int playerSpeed = 4;
+    public float playerSpeed = 4;
 
     // Update is called once per frame
     void Update()
@@ -17,5 +17,10 @@ public class PlayerMovement : MonoBehaviour
             transform.Translate(new Vector3(0, Input.GetAxis("Player2")* Time.deltaTime* playerSpeed, 0));
         }
         transform.position = new Vector3(transform.position.x, Mathf.Clamp(transform.position.y, -3,3), transform.position.z);
+    }
+    public void UpdateStats()
+    {
+        Stats stat = FindObjectOfType<Stats>();
+        playerSpeed = stat.playerSpeed;
     }
 }

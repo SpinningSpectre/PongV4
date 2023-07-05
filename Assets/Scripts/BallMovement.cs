@@ -21,7 +21,14 @@ public class BallMovement : MonoBehaviour
     void Update()
     {
         //Hope it aint broken
-
+        if (transform.position.x > 20 || transform.position.x < -30)
+        {
+            SpawnBall();
+        }
+        if (moveSpeed > 70)
+        {
+            moveSpeed = 70;
+        }
         transform.Translate(ballDirection * moveSpeed * Time.deltaTime);
         transform.position = new Vector3(transform.position.x, Mathf.Clamp(transform.position.y, -5,5), transform.position.z);
     }
@@ -67,5 +74,13 @@ public class BallMovement : MonoBehaviour
         }
         ballDirection = ballDirection.normalized;
         moveSpeed = defaultMoveSpeed;
+    }
+
+    public void UpdateStats()
+    {
+        Stats stat = FindObjectOfType<Stats>();
+        defaultMoveSpeed = stat.defaultBallMoveSpeed;
+        moveSpeedIncrease = stat.moveSpeedIncrease;
+        slightMoveSpeedIncrease = stat.speedIncreaseOnWall;
     }
 }
