@@ -10,6 +10,8 @@ public class Stats : MonoBehaviour
     public float speedIncreaseOnWall;
     public float playerSpeed;
     public int winPoints;
+    public int amountOfBalls;
+    public GameObject[] balls;
     // Start is called before the first frame update
     void Start()
     {
@@ -67,5 +69,26 @@ public class Stats : MonoBehaviour
             number = 1;
         }
         winPoints = number;
+    }
+    public void ChangeBallAmount(string amount)
+    {
+        int number = int.Parse(amount);
+        if (number < 1)
+        {
+            number = 1;
+        }
+        if (number > 10)
+        {
+            number = 10;
+        }
+        amountOfBalls = number;
+        for (int i = 0; i < balls.Length; i++)
+        {
+            balls[i].SetActive(false);
+        }
+        for (int i = 0; i < amountOfBalls - 1; i++)
+        {
+            balls[i].SetActive(true);
+        }
     }
 }
