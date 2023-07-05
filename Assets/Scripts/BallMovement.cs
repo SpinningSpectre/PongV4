@@ -51,7 +51,7 @@ public class BallMovement : MonoBehaviour
             score.AddP2Score();
         }
     }
-    private void SpawnBall()
+    public void SpawnBall()
     {
 
         transform.position = new Vector3(0, 0, 0);
