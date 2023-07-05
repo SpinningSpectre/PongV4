@@ -5,67 +5,67 @@ using UnityEngine;
 
 public class BallMovement : MonoBehaviour
 {
-    public float MoveSpeed = 4f;
-    private float MoveSpeedIncrease = 1.1f;
-    private float SlightMoveSpeedIncrease = 1.01f;
-    Vector2 BallDirection = new Vector2(1, 1);
-    private float DefaultMoveSpeed = 7;
+    [SerializeField] float moveSpeed = 4f;
+    [SerializeField] float moveSpeedIncrease = 1.1f;
+    [SerializeField] float slightMoveSpeedIncrease = 1.01f;
+    Vector2 ballDirection = new Vector2(1, 1);
+    [SerializeField] float defaultMoveSpeed = 7;
+    Scores score;
     // Start is called before the first frame update
     void Start()
     {
-        BallDirection = new Vector3(Random.Range(-1f, 1f), Random.Range(-1f, 1f), 0);
-        if (BallDirection.x >-0.2f && BallDirection.x <0.2f)
-        {
-            BallDirection = new Vector2(0.5f, BallDirection.y);
-        }
-        BallDirection = BallDirection.normalized;
+        score = FindObjectOfType<Scores>();
+        SpawnBall();
     }
     // Update is called once per frame
     void Update()
     {
         //Hope it aint broken
-        transform.Translate(BallDirection * MoveSpeed * Time.deltaTime);
+
+        transform.Translate(ballDirection * moveSpeed * Time.deltaTime);
+        transform.position = new Vector3(transform.position.x, Mathf.Clamp(transform.position.y, -5,5), transform.position.z);
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if(collision.gameObject.CompareTag("Wall"))
         {
-            BallDirection = Vector3.Reflect(BallDirection, collision.contacts[0].normal);
-            MoveSpeed = MoveSpeed * SlightMoveSpeedIncrease;
+            ballDirection = Vector3.Reflect(ballDirection, collision.contacts[0].normal);
+            moveSpeed = moveSpeed * slightMoveSpeedIncrease;
         }
         if (collision.gameObject.CompareTag("Paddle"))
         {
-            BallDirection = Vector3.Reflect(BallDirection, collision.contacts[0].normal);
-            MoveSpeed = MoveSpeed * MoveSpeedIncrease;
+            ballDirection = Vector3.Reflect(ballDirection, collision.contacts[0].normal);
+            moveSpeed = moveSpeed * moveSpeedIncrease;
         }
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Barrier"))
         {
-            ResetBall();
-            GameObject.Find("Canvas").GetComponent<Scores>().AddP1Score(); 
+            SpawnBall();
+            score.AddP1Score(); 
         }
         if (collision.gameObject.CompareTag("Barrier2"))
         {
-            ResetBall();
-            GameObject.Find("Canvas").GetComponent<Scores>().AddP2Score();
-        }
-        if (collision.gameObject.CompareTag("BrokenBarrier"))
-        {
-            ResetBall();
-            GameObject.Find("Canvas").GetComponent<Scores>().AddP3Score();
+            SpawnBall();
+            score.AddP2Score();
         }
     }
-    private void ResetBall()
+    private void SpawnBall()
     {
+
         transform.position = new Vector3(0, 0, 0);
-        BallDirection = new Vector2(Random.Range(-1f, 1f), Random.Range(-1f, 1f));
-        if (BallDirection.x > -0.2f && BallDirection.x < 0.2f)
+        for(int i =0; i < 10; i++)
         {
-            BallDirection = new Vector2(0.5f, BallDirection.y);
+            ballDirection = new Vector2(Random.Range(-1f, 1f), Random.Range(-1f, 1f));
+            if (ballDirection.x > -0.2f && ballDirection.x < 0.2f)
+            {
+                i--;
+                continue;
+            }
+            i = 10;
         }
-        BallDirection = BallDirection.normalized;
-        MoveSpeed = DefaultMoveSpeed;
+        ballDirection = ballDirection.normalized;
+        moveSpeed = defaultMoveSpeed;
     }
 }
