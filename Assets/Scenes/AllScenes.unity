@@ -518,7 +518,7 @@ MonoBehaviour:
   m_CharacterValidation: 2
   m_RegexValue: 
   m_GlobalPointSize: 14
-  m_CharacterLimit: 2
+  m_CharacterLimit: 3
   m_OnEndEdit:
     m_PersistentCalls:
       m_Calls:
@@ -1196,8 +1196,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1276670247}
-        m_TargetAssemblyTypeName: BallMovement, Assembly-CSharp
+      - m_Target: {fileID: 1626302814}
+        m_TargetAssemblyTypeName: BallsManager, Assembly-CSharp
         m_MethodName: UpdateStats
         m_Mode: 1
         m_Arguments:
@@ -1646,6 +1646,18 @@ MonoBehaviour:
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
         m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 1626302814}
+        m_TargetAssemblyTypeName: BallsManager, Assembly-CSharp
+        m_MethodName: ResetBalls
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -2560,6 +2572,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 331607562}
   m_CullTransparentMesh: 1
+--- !u!1 &333468526 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4166980197798081612, guid: 2c15f9e136ad6214ea8e5feb181711db, type: 3}
+  m_PrefabInstance: {fileID: 1812511665}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &342604966
 GameObject:
   m_ObjectHideFlags: 0
@@ -2922,6 +2939,22 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!1 &544306425 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4166980197798081612, guid: 2c15f9e136ad6214ea8e5feb181711db, type: 3}
+  m_PrefabInstance: {fileID: 223188629}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &544306428 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4166980197798081615, guid: 2c15f9e136ad6214ea8e5feb181711db, type: 3}
+  m_PrefabInstance: {fileID: 223188629}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 544306425}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c4aeca4413d680d4e9d06fc42109f3a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &576879072
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4252,9 +4285,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-      - m_Target: {fileID: 1276670247}
-        m_TargetAssemblyTypeName: BallMovement, Assembly-CSharp
-        m_MethodName: SpawnBall
+      - m_Target: {fileID: 1626302814}
+        m_TargetAssemblyTypeName: BallsManager, Assembly-CSharp
+        m_MethodName: ResetBalls
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -5210,8 +5243,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1276670247}
-        m_TargetAssemblyTypeName: BallMovement, Assembly-CSharp
+      - m_Target: {fileID: 1626302814}
+        m_TargetAssemblyTypeName: BallsManager, Assembly-CSharp
         m_MethodName: UpdateStats
         m_Mode: 1
         m_Arguments:
@@ -5369,6 +5402,11 @@ MonoBehaviour:
 Transform:
   m_CorrespondingSourceObject: {fileID: 6143750949516061674, guid: 5955732853bc61949a41f5dfa79ca962, type: 3}
   m_PrefabInstance: {fileID: 6143750950232925023}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &939944616 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4166980197798081612, guid: 2c15f9e136ad6214ea8e5feb181711db, type: 3}
+  m_PrefabInstance: {fileID: 2038275586}
   m_PrefabAsset: {fileID: 0}
 --- !u!114 &964297568 stripped
 MonoBehaviour:
@@ -5671,6 +5709,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pauseKey: 27
   pauseScreen: {fileID: 586532074}
+--- !u!1 &1040586230 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4166980197798081612, guid: 2c15f9e136ad6214ea8e5feb181711db, type: 3}
+  m_PrefabInstance: {fileID: 1011963270}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1040586233 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4166980197798081615, guid: 2c15f9e136ad6214ea8e5feb181711db, type: 3}
+  m_PrefabInstance: {fileID: 1011963270}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1040586230}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c4aeca4413d680d4e9d06fc42109f3a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1044718218
 GameObject:
   m_ObjectHideFlags: 0
@@ -6683,6 +6737,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1161858936}
   m_CullTransparentMesh: 1
+--- !u!1 &1163543014 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4166980197798081612, guid: 2c15f9e136ad6214ea8e5feb181711db, type: 3}
+  m_PrefabInstance: {fileID: 1291914518}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1174574741
 GameObject:
   m_ObjectHideFlags: 0
@@ -6828,9 +6887,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-      - m_Target: {fileID: 1276670247}
-        m_TargetAssemblyTypeName: BallMovement, Assembly-CSharp
-        m_MethodName: SpawnBall
+      - m_Target: {fileID: 1626302814}
+        m_TargetAssemblyTypeName: BallsManager, Assembly-CSharp
+        m_MethodName: ResetBalls
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -7084,6 +7143,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4166980197798081601, guid: 2c15f9e136ad6214ea8e5feb181711db, type: 3}
   m_PrefabInstance: {fileID: 1291914518}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1291914522 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4166980197798081615, guid: 2c15f9e136ad6214ea8e5feb181711db, type: 3}
+  m_PrefabInstance: {fileID: 1291914518}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1163543014}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c4aeca4413d680d4e9d06fc42109f3a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1304545275
 GameObject:
   m_ObjectHideFlags: 0
@@ -8168,6 +8238,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1529403090}
   m_CullTransparentMesh: 1
+--- !u!1 &1536664620 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4166980197798081612, guid: 2c15f9e136ad6214ea8e5feb181711db, type: 3}
+  m_PrefabInstance: {fileID: 2039526844}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1546859492
 GameObject:
   m_ObjectHideFlags: 0
@@ -8582,6 +8657,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1626302813}
   - component: {fileID: 1626302812}
+  - component: {fileID: 1626302814}
   m_Layer: 0
   m_Name: Manager
   m_TagString: Untagged
@@ -8607,7 +8683,16 @@ MonoBehaviour:
   playerSpeed: 6
   winPoints: 10
   amountOfBalls: 0
-  balls: []
+  balls:
+  - {fileID: 1836691312}
+  - {fileID: 1536664620}
+  - {fileID: 333468526}
+  - {fileID: 544306425}
+  - {fileID: 1040586230}
+  - {fileID: 939944616}
+  - {fileID: 2009045117}
+  - {fileID: 1694722087}
+  - {fileID: 1163543014}
 --- !u!4 &1626302813
 Transform:
   m_ObjectHideFlags: 0
@@ -8623,6 +8708,30 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1626302814
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1626302811}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d1270091069b44245b52b97b6fabeeb6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  balls:
+  - {fileID: 1276670247}
+  - {fileID: 1836691315}
+  - {fileID: 2039526848}
+  - {fileID: 1812511669}
+  - {fileID: 544306428}
+  - {fileID: 1040586233}
+  - {fileID: 2038275590}
+  - {fileID: 2009045120}
+  - {fileID: 1694722090}
+  - {fileID: 1291914522}
+  stat: {fileID: 0}
 --- !u!1 &1677323948
 GameObject:
   m_ObjectHideFlags: 0
@@ -8794,6 +8903,22 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1677323948}
   m_CullTransparentMesh: 1
+--- !u!1 &1694722087 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4166980197798081612, guid: 2c15f9e136ad6214ea8e5feb181711db, type: 3}
+  m_PrefabInstance: {fileID: 576879072}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1694722090 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4166980197798081615, guid: 2c15f9e136ad6214ea8e5feb181711db, type: 3}
+  m_PrefabInstance: {fileID: 576879072}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1694722087}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c4aeca4413d680d4e9d06fc42109f3a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1696493908
 GameObject:
   m_ObjectHideFlags: 0
@@ -9193,8 +9318,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1276670247}
-        m_TargetAssemblyTypeName: BallMovement, Assembly-CSharp
+      - m_Target: {fileID: 1626302814}
+        m_TargetAssemblyTypeName: BallsManager, Assembly-CSharp
         m_MethodName: UpdateStats
         m_Mode: 1
         m_Arguments:
@@ -9345,6 +9470,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4166980197798081601, guid: 2c15f9e136ad6214ea8e5feb181711db, type: 3}
   m_PrefabInstance: {fileID: 1812511665}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1812511669 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4166980197798081615, guid: 2c15f9e136ad6214ea8e5feb181711db, type: 3}
+  m_PrefabInstance: {fileID: 1812511665}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 333468526}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c4aeca4413d680d4e9d06fc42109f3a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1826231331
 GameObject:
   m_ObjectHideFlags: 0
@@ -9523,6 +9659,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Padding: {x: -8, y: -5, z: -8, w: -5}
   m_Softness: {x: 0, y: 0}
+--- !u!1 &1836691312 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4166980197798081612, guid: 2c15f9e136ad6214ea8e5feb181711db, type: 3}
+  m_PrefabInstance: {fileID: 1331372653}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1836691315 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4166980197798081615, guid: 2c15f9e136ad6214ea8e5feb181711db, type: 3}
+  m_PrefabInstance: {fileID: 1331372653}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1836691312}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c4aeca4413d680d4e9d06fc42109f3a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1837790721
 GameObject:
   m_ObjectHideFlags: 0
@@ -10057,6 +10209,22 @@ Transform:
   m_Father: {fileID: 1837790722}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -180}
+--- !u!1 &2009045117 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4166980197798081612, guid: 2c15f9e136ad6214ea8e5feb181711db, type: 3}
+  m_PrefabInstance: {fileID: 1612718213}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2009045120 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4166980197798081615, guid: 2c15f9e136ad6214ea8e5feb181711db, type: 3}
+  m_PrefabInstance: {fileID: 1612718213}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2009045117}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c4aeca4413d680d4e9d06fc42109f3a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2036770268
 GameObject:
   m_ObjectHideFlags: 0
@@ -10258,6 +10426,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4166980197798081601, guid: 2c15f9e136ad6214ea8e5feb181711db, type: 3}
   m_PrefabInstance: {fileID: 2038275586}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2038275590 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4166980197798081615, guid: 2c15f9e136ad6214ea8e5feb181711db, type: 3}
+  m_PrefabInstance: {fileID: 2038275586}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 939944616}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c4aeca4413d680d4e9d06fc42109f3a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &2039526844
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10324,6 +10503,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4166980197798081601, guid: 2c15f9e136ad6214ea8e5feb181711db, type: 3}
   m_PrefabInstance: {fileID: 2039526844}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2039526848 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4166980197798081615, guid: 2c15f9e136ad6214ea8e5feb181711db, type: 3}
+  m_PrefabInstance: {fileID: 2039526844}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1536664620}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c4aeca4413d680d4e9d06fc42109f3a1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2061022307
 GameObject:
   m_ObjectHideFlags: 0
