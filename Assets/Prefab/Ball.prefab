@@ -215,6 +215,11 @@ MonoBehaviour:
   moveSpeedIncrease: 1.1
   slightMoveSpeedIncrease: 1.01
   defaultMoveSpeed: 7
+  showsTimer: 0
+  timerText: {fileID: 0}
+  timeUntilRespawn: 0
+  stats: {fileID: 0}
+  bounceParticle: {fileID: 8108431405033193149, guid: 8fa95c9937962484c99d30400ab7ee71, type: 3}
 --- !u!61 &4166980197798081614
 BoxCollider2D:
   m_ObjectHideFlags: 0

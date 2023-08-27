@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class BallMovement : MonoBehaviour
 {
@@ -11,11 +12,17 @@ public class BallMovement : MonoBehaviour
     Vector2 ballDirection = new Vector2(1, 1);
     [SerializeField] float defaultMoveSpeed = 7;
     Scores score;
+    [SerializeField] bool showsTimer;
+    [SerializeField] Text timerText;
+    [SerializeField] float timeUntilRespawn;
+    float timeTillBallSpawn = 0;
+    [SerializeField] private Stats stats;
+
+    [SerializeField] private GameObject bounceParticle;
     // Start is called before the first frame update
     void Start()
     {
         score = FindObjectOfType<Scores>();
-        SpawnBall();
     }
     // Update is called once per frame
     void Update()
@@ -25,12 +32,38 @@ public class BallMovement : MonoBehaviour
         {
             SpawnBall();
         }
-        if (moveSpeed > 70)
+        timeTillBallSpawn -= Time.deltaTime;
+        if(stats.amountOfBalls < 2)
         {
-            moveSpeed = 70;
+            if(timeTillBallSpawn > 2 && timeTillBallSpawn < 3)
+            {
+                timerText.text = "3";
+                timerText.color = Color.red;
+            }
+            else if (timeTillBallSpawn > 1 && timeTillBallSpawn < 2)
+            {
+                timerText.text = "2";
+                timerText.color = Color.yellow;
+            }
+            else if (timeTillBallSpawn > 0 && timeTillBallSpawn < 1)
+            {
+                timerText.text = "1";
+                timerText.color = Color.white;
+            }
         }
-        transform.Translate(ballDirection * moveSpeed * Time.deltaTime);
-        transform.position = new Vector3(transform.position.x, Mathf.Clamp(transform.position.y, -5,5), transform.position.z);
+        if (timeTillBallSpawn < 0)
+        {
+            if (stats.amountOfBalls < 2)
+            {
+                timerText.text = "";
+            }
+            if (moveSpeed > 70)
+            {
+                moveSpeed = 70;
+            }
+            transform.Translate(ballDirection * moveSpeed * Time.deltaTime);
+            transform.position = new Vector3(transform.position.x, Mathf.Clamp(transform.position.y, -5, 5), transform.position.z);
+        }
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -38,11 +71,13 @@ public class BallMovement : MonoBehaviour
         {
             ballDirection = Vector3.Reflect(ballDirection, collision.contacts[0].normal);
             moveSpeed = moveSpeed * slightMoveSpeedIncrease;
+            Instantiate(bounceParticle, gameObject.transform.position, gameObject.transform.rotation);
         }
         if (collision.gameObject.CompareTag("Paddle"))
         {
             ballDirection = Vector3.Reflect(ballDirection, collision.contacts[0].normal);
             moveSpeed = moveSpeed * moveSpeedIncrease;
+            Instantiate(bounceParticle, gameObject.transform.position, gameObject.transform.rotation);
         }
     }
     private void OnTriggerEnter2D(Collider2D collision)
@@ -74,6 +109,10 @@ public class BallMovement : MonoBehaviour
         }
         ballDirection = ballDirection.normalized;
         moveSpeed = defaultMoveSpeed;
+        if(stats.amountOfBalls < 2)
+        {
+            timeTillBallSpawn = timeUntilRespawn;
+        }
     }
 
     public void UpdateStats()

@@ -15,11 +15,14 @@ public class Scores : MonoBehaviour
     [SerializeField] UnityEvent endingEvent;
     [SerializeField] GameObject blueWin;
     [SerializeField] GameObject redWin;
+    [SerializeField] private GameObject[] scoreParticles;
+    [SerializeField] private GameObject[] scoreParticleLocations;
 
     public void AddP1Score()
     {
         Player1Score++;
         p1Text.text = Player1Score.ToString();
+        Instantiate(scoreParticles[0], scoreParticleLocations[0].transform.position, scoreParticleLocations[0].transform.rotation);
         if (Player1Score == Player1win)
         {
             endingEvent.Invoke();
@@ -31,6 +34,7 @@ public class Scores : MonoBehaviour
     {
         Player2Score++;
         p2Text.text = Player2Score.ToString();
+        Instantiate(scoreParticles[1], scoreParticleLocations[1].transform.position, scoreParticleLocations[1].transform.rotation);
         if (Player2Score == Player2win)
         {
             endingEvent.Invoke();
