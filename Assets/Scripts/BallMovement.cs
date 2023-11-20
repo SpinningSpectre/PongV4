@@ -15,7 +15,7 @@ public class BallMovement : MonoBehaviour
     [SerializeField] bool showsTimer;
     [SerializeField] Text timerText;
     [SerializeField] float timeUntilRespawn;
-    float timeTillBallSpawn = 0;
+    [SerializeField] private float timeTillBallSpawn = 0;
     [SerializeField] private Stats stats;
 
     [SerializeField] private GameObject bounceParticle;
