@@ -9039,7 +9039,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &494633272
 Transform:
   m_ObjectHideFlags: 0
@@ -9220,8 +9220,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-  blueWin: {fileID: 0}
-  redWin: {fileID: 0}
+  blueWin: {fileID: 326931954}
+  redWin: {fileID: 1704300193}
   scoreParticles:
   - {fileID: 8108431405033193149, guid: be478cc6a3e7d384fb4647b0cf38ff55, type: 3}
   - {fileID: 8108431405033193149, guid: c0fce0daa6c2d994199d62cd45474f8d, type: 3}
@@ -26420,7 +26420,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1344579387
 RectTransform:
   m_ObjectHideFlags: 0
@@ -34913,7 +34913,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1837790722
 Transform:
   m_ObjectHideFlags: 0
