@@ -1,7 +1,9 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Stats : MonoBehaviour
 {
@@ -12,6 +14,10 @@ public class Stats : MonoBehaviour
     public int winPoints;
     public int amountOfBalls;
     public GameObject[] balls;
+    public GameObject[] christmasBalls;
+    public GameObject[] normalObjects;
+    public GameObject[] christmasObjects;
+    public Toggle tog;
     // Start is called before the first frame update
     void Start()
     {
@@ -85,10 +91,40 @@ public class Stats : MonoBehaviour
         for (int i = 0; i < balls.Length; i++)
         {
             balls[i].SetActive(false);
+            christmasBalls[i].SetActive(false);
         }
         for (int i = 0; i < amountOfBalls - 1; i++)
         {
             balls[i].SetActive(true);
+            christmasBalls[i].SetActive(true);
+        }
+    }
+    public void ChangeChristmas(bool isChrist)
+    {
+        isChrist = tog.isOn;
+        if (isChrist)
+        {
+            Debug.Log("Christ");
+            foreach (GameObject chris in christmasObjects)
+            {
+                chris.SetActive(true);
+            }
+            foreach (GameObject norm in normalObjects)
+            {
+                norm.SetActive(false);
+            }
+        }
+        else
+        {
+            Debug.Log("No Christ");
+            foreach (GameObject chris in christmasObjects)
+            {
+                chris.SetActive(false);
+            }
+            foreach (GameObject norm in normalObjects)
+            {
+                norm.SetActive(true);
+            }
         }
     }
 }

@@ -22,7 +22,8 @@ public class Scores : MonoBehaviour
     {
         Player1Score++;
         p1Text.text = Player1Score.ToString();
-        Instantiate(scoreParticles[0], scoreParticleLocations[0].transform.position, scoreParticleLocations[0].transform.rotation);
+        GameObject sc = Instantiate(scoreParticles[0], scoreParticleLocations[0].transform.position, scoreParticleLocations[0].transform.rotation);
+        sc.transform.parent = GameObject.Find("Particles").transform;
         if (Player1Score == Player1win)
         {
             endingEvent.Invoke();
@@ -34,7 +35,8 @@ public class Scores : MonoBehaviour
     {
         Player2Score++;
         p2Text.text = Player2Score.ToString();
-        Instantiate(scoreParticles[1], scoreParticleLocations[1].transform.position, scoreParticleLocations[1].transform.rotation);
+        GameObject sc = Instantiate(scoreParticles[1], scoreParticleLocations[1].transform.position, scoreParticleLocations[1].transform.rotation);
+        sc.transform.parent = GameObject.Find("Particles").transform;
         if (Player2Score == Player2win)
         {
             endingEvent.Invoke();
@@ -54,5 +56,14 @@ public class Scores : MonoBehaviour
         Stats stat = FindObjectOfType<Stats>();
         Player1win = stat.winPoints;
         Player2win = stat.winPoints;
+    }
+
+    public void KillAllParticles()
+    {
+        Transform partic = GameObject.Find("Particles").GetComponent<Transform>();
+        for(int i = 0;i < partic.childCount;i++)
+        {
+            Destroy(partic.GetChild(i).gameObject);
+        }
     }
 }

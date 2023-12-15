@@ -71,13 +71,18 @@ public class BallMovement : MonoBehaviour
         {
             ballDirection = Vector3.Reflect(ballDirection, collision.contacts[0].normal);
             moveSpeed = moveSpeed * slightMoveSpeedIncrease;
-            Instantiate(bounceParticle, gameObject.transform.position, gameObject.transform.rotation);
+            if(bounceParticle != null)
+            {
+                GameObject bo = Instantiate(bounceParticle, gameObject.transform.position, gameObject.transform.rotation);
+                bo.transform.parent = GameObject.Find("Particles").transform;
+            }
         }
         if (collision.gameObject.CompareTag("Paddle"))
         {
             ballDirection = Vector3.Reflect(ballDirection, collision.contacts[0].normal);
             moveSpeed = moveSpeed * moveSpeedIncrease;
-            Instantiate(bounceParticle, gameObject.transform.position, gameObject.transform.rotation);
+            GameObject bo = Instantiate(bounceParticle, gameObject.transform.position, gameObject.transform.rotation);
+            bo.transform.parent = GameObject.Find("Particles").transform;
         }
     }
     private void OnTriggerEnter2D(Collider2D collision)
