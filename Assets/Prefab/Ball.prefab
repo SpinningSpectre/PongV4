@@ -25,7 +25,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2402747613308202823}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 13.461538, y: 0, z: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 1}
   m_LocalScale: {x: 2, y: 0.5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -218,6 +218,7 @@ MonoBehaviour:
   showsTimer: 0
   timerText: {fileID: 0}
   timeUntilRespawn: 0
+  timeTillBallSpawn: 0
   stats: {fileID: 0}
   bounceParticle: {fileID: 8108431405033193149, guid: 8fa95c9937962484c99d30400ab7ee71, type: 3}
 --- !u!61 &4166980197798081614
