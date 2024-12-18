@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
@@ -14,10 +15,13 @@ public class Stats : MonoBehaviour
     public int winPoints;
     public int amountOfBalls;
     public GameObject[] balls;
+    public GameObject mainBall;
+    [Header("Default, Christmas, New years")]
+    public Sprite[] ballIcons;
     public GameObject[] christmasBalls;
     public GameObject[] normalObjects;
     public GameObject[] christmasObjects;
-    public Toggle tog;
+    public GameObject[] newYearsObjects;
     // Start is called before the first frame update
     void Start()
     {
@@ -99,32 +103,60 @@ public class Stats : MonoBehaviour
             christmasBalls[i].SetActive(true);
         }
     }
-    public void ChangeChristmas(bool isChrist)
+
+    public void ChangeTheme(TMP_Dropdown theme)
     {
-        isChrist = tog.isOn;
-        if (isChrist)
+        TMP_Text text = theme.transform.GetChild(0).GetComponent<TMP_Text>();
+        print(text.text);
+
+        //Turns off every theme
+        foreach (GameObject chris in christmasObjects)
         {
-            Debug.Log("Christ");
-            foreach (GameObject chris in christmasObjects)
-            {
-                chris.SetActive(true);
-            }
-            foreach (GameObject norm in normalObjects)
-            {
-                norm.SetActive(false);
-            }
+            chris.SetActive(false);
         }
-        else
+        foreach (GameObject norm in normalObjects)
         {
-            Debug.Log("No Christ");
-            foreach (GameObject chris in christmasObjects)
-            {
-                chris.SetActive(false);
-            }
-            foreach (GameObject norm in normalObjects)
-            {
-                norm.SetActive(true);
-            }
+            norm.SetActive(false);
+        }
+        foreach (GameObject newy in newYearsObjects)
+        {
+            newy.SetActive(false);
+        }
+        switch (text.text)
+        {
+            default:
+                foreach (GameObject norm in normalObjects)
+                {
+                    norm.SetActive(true);
+                }
+                foreach (GameObject ball in balls)
+                {
+                    ball.GetComponent<SpriteRenderer>().sprite = ballIcons[0];
+                }
+                mainBall.GetComponent<SpriteRenderer>().sprite = ballIcons[0];
+                    break;
+            case "Christmas":
+                foreach (GameObject chris in christmasObjects)
+                {
+                    chris.SetActive(true);
+                    foreach (GameObject ball in balls)
+                    {
+                        ball.GetComponent<SpriteRenderer>().sprite = ballIcons[1];
+                    }
+                    mainBall.GetComponent<SpriteRenderer>().sprite = ballIcons[1];
+                }
+                break;
+            case "New Years":
+                foreach (GameObject newy in newYearsObjects)
+                {
+                    newy.SetActive(true);
+                }
+                foreach (GameObject ball in balls)
+                {
+                    ball.GetComponent<SpriteRenderer>().sprite = ballIcons[2];
+                }
+                mainBall.GetComponent<SpriteRenderer>().sprite = ballIcons[2];
+                break;
         }
     }
 }

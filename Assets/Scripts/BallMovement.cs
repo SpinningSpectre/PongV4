@@ -62,7 +62,7 @@ public class BallMovement : MonoBehaviour
                 moveSpeed = 70;
             }
             transform.Translate(ballDirection * moveSpeed * Time.deltaTime);
-            transform.position = new Vector3(transform.position.x, Mathf.Clamp(transform.position.y, -5, 5), transform.position.z);
+            transform.position = new Vector3(transform.position.x, Mathf.Clamp(transform.position.y, -4, 4), transform.position.z);
         }
     }
     private void OnCollisionEnter2D(Collision2D collision)
